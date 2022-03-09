@@ -1,0 +1,28 @@
+{
+  "name": "@chumager/serializer",
+  "version": "1.0.0",
+  "description": "Allows to serialize and deseriallize javascript objects",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chumager/serializer.git"
+  },
+  "keywords": [
+    "serialize"
+  ],
+  "author": "Juan Carlos Muñoz (jcmunoz@itdmovil.cl)",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/chumager/serializer/issues"
+  },
+  "homepage": "https://github.com/chumager/serializer#readme",
+  "devDependencies": {
+    "eslint": "^8.10.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.5.1"
+  }
+}
