@@ -12,6 +12,9 @@
     "url": "git+https://github.com/chumager/serializer.git"
   },
   "keywords": [
+    "serialize json",
+    "serialize object",
+    "serialize javascript",
     "serialize"
   ],
   "author": "Juan Carlos Muñoz (jcmunoz@itdmovil.cl)",
