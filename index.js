@@ -97,7 +97,7 @@ function stringify(obj) {
         const {get, set, value} = Object.getOwnPropertyDescriptor(obj, key);
         //recorremos las opciones
         const parse = [get, set, value].reduce((concat, val) => {
-          if (!val) return concat;
+          if (typeof val === "undefined") return concat;
           const result = parsePair(key, val);
           return (concat && `${concat}, `) + result;
         }, "");
