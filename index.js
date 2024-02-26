@@ -71,7 +71,7 @@ function stringify(obj) {
     case "bigint":
       return `${obj}n`;
     case "string":
-      return `"${obj.replace(/"/g, '\\"')}"`;
+      return JSON.stringify(obj);
     case "symbol":
       // eslint-disable-next-line no-case-declarations
       const desc = obj.description;
@@ -92,7 +92,7 @@ function stringify(obj) {
       if (obj instanceof Set) return parseSet(obj);
       //acá se deben agregar los parsers externos ya que después cae en typeof object
       //luego de los parsers se presume objeto
-      return `{${Object.entries(obj).reduce((concat, [key, val]) => {
+      return `{${Object.entries(obj).reduce((concat, [key /*, val*/]) => {
         // obtenemos los posibles valores del atributo del objeto
         const {get, set, value} = Object.getOwnPropertyDescriptor(obj, key);
         //recorremos las opciones
