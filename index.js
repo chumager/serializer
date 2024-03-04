@@ -87,7 +87,7 @@ function stringify(obj) {
           return (concat && `${concat}, `) + result;
         }, "")}]`;
       }
-      if (obj instanceof Date) return `new Date(${obj})`;
+      if (obj instanceof Date) return `new Date(${obj.getTime()})`;
       if (obj instanceof Map) return parseMap(obj);
       if (obj instanceof Set) return parseSet(obj);
       //acá se deben agregar los parsers externos ya que después cae en typeof object
