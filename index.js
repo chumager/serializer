@@ -94,11 +94,11 @@ function stringify(obj) {
       //luego de los parsers se presume objeto
       return `{${Object.entries(obj).reduce((concat, [key /*, val*/]) => {
         // obtenemos los posibles valores del atributo del objeto
-        const {get, set, value} = Object.getOwnPropertyDescriptor(obj, key);
+        const properties = Object.getOwnPropertyDescriptor(obj, key);
         //recorremos las opciones
-        const parse = [get, set, value].reduce((concat, val) => {
-          //if (typeof val === "undefined") return concat;
-          const result = parsePair(key, val);
+        const parse = ["get", "set", "value"].reduce((concat, prop) => {
+          if (typeof properties[prop] === "undefined" && prop !== "value") return concat;
+          const result = parsePair(key, properties[prop]);
           return (concat && `${concat}, `) + result;
         }, "");
         return `${concat ? `${concat}, ${parse}` : `${parse}`}`;

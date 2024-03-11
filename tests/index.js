@@ -57,9 +57,10 @@ obj = {
   get other() {
     return true;
   },
-  /* set other(v) {
-   *   this._v = v;
-   * }, */
+  set other(v) {
+    this._v = v;
+  },
+  empty: undefined,
   f1: () => true,
   f2() {
     return true;
